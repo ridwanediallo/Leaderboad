@@ -18,25 +18,38 @@ class DataList {
     this.scores = [];
   }
 
-   saveTolocal() {
+  saveTolocal() {
     localStorage.setItem('scores', JSON.stringify(this.scores));
   }
 
+  getFromLocal = () => {
+    this.scores = localStorage.getItem('scores')
+      ? JSON.parse(localStorage.getItem('scores'))
+      : [];
+  };
 
   renderScore(list) {
+    const item = document.createElement('li');
     this.scores.forEach((el, i) => {
-      const item = document.createElement('li');
       item.classList.add('item');
       item.id = i;
-      item.textcontent = `${el.name}: ${el.score}`;
+      item.innerHTML = `${el.name}: ${el.score}`;
     });
     list.append(item);
   }
 
-  addScore() {
-    const name = inputName.value;
-    const score = inputScore.value;
-    const newScore = new Data(name, score);
+  addScore(name, score, scores) {
+    const newScore = new Data(name, score, scores);
     this.scores.push(newScore);
+    this.renderScore(list);
+    console.log(this.scores);
   }
 }
+
+const scoreList = new DataList();
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  scoreList.addScore(inputName.value, inputScore.value, scoreList.scores);
+})
+

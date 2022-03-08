@@ -18,4 +18,15 @@ class DataList {
         this.scores = [];
     }
 
+    renderScore(list) {
+      this.scores.forEach((el, i) => {
+           const item = document.createElement('li');
+           item.classList.add('item');
+           item.id = i;
+           item.textcontent = `${el.name}: ${el.score}`;
+      })
+      list.append(item);
+    }
+
+    
 }

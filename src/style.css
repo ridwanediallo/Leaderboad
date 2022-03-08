@@ -44,6 +44,11 @@ h2 {
   margin: 0 0 20px 0;
 }
 
+.inputs-style {
+  padding: 10px;
+  border: #000 solid 2px;
+}
+
 .item {
   list-style: none;
   font-size: 24px;
@@ -53,15 +58,22 @@ h2 {
   padding: 0;
 }
 
+button {
+  font-size: 18px;
+  padding: 5px 10px;
+  border: #000 solid 2px;
+  cursor: pointer;
+}
+
 .submit-btn {
 float: right;
 }
 
 .output {
-  height: 400px;
+  height: 300px;
   width: 400px;
   overflow: auto;
-  border: 5px solid red;
+  border: 5px solid #000;
 }
 
 

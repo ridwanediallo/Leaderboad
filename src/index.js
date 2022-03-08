@@ -18,6 +18,11 @@ class DataList {
     this.scores = [];
   }
 
+   saveTolocal() {
+    localStorage.setItem('scores', JSON.stringify(this.scores));
+  }
+
+
   renderScore(list) {
     this.scores.forEach((el, i) => {
       const item = document.createElement('li');

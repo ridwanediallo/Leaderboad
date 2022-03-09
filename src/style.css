@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin-left: 50px;
+  letter-spacing: 2px;
+  font-size: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  margin-top: 100px;
+}
+
+.recent-scores {
+  letter-spacing: 2px;
+}
+
+.add-score {
+  letter-spacing: 2px;
+}
+
+.recent-scores-title {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.input-name {
+  margin: 20px 0;
+}
+
+.input-score {
+  margin: 0 0 20px 0;
+}
+
+.inputs-style {
+  padding: 10px;
+  border: #000 solid 2px;
+}
+
+.item {
+  list-style: none;
+  font-size: 24px;
+}
+
+.list {
+  padding: 0;
+}
+
+button {
+  font-size: 18px;
+  padding: 5px 10px;
+  border: #000 solid 2px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  float: right;
+}
+
+.output {
+  height: 300px;
+  width: 400px;
+  overflow: auto;
+  border: 5px solid #000;
+}

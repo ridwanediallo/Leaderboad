@@ -1,5 +1,5 @@
+import Data from './data.js';
 
-import Data from "./data.js";
 export const list = document.querySelector('.list');
 
 export default class DataList {
@@ -40,5 +40,3 @@ export default class DataList {
     this.renderScore(list);
   }
 }
-
-

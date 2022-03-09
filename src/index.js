@@ -1,11 +1,10 @@
 import './style.css';
 
-import DataList, {list} from './modules/dataList.js';
+import DataList, { list } from './modules/dataList.js';
+
 const inputName = document.querySelector('.input-name');
 const inputScore = document.querySelector('.input-score');
 const submitBtn = document.querySelector('.submit-btn');
-
-
 
 const scoreList = new DataList();
 

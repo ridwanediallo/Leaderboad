@@ -33,3 +33,7 @@ const refresher = () => {
     renderScore(list, res);
   });
 };
+
+refreshBtn.addEventListener('click', () => {
+  refresher();
+});

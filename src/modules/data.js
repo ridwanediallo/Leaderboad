@@ -4,3 +4,5 @@ export default class Data {
     this.score = score;
   }
 }
+
+// JzH9HTJguuluPrqqtBeU

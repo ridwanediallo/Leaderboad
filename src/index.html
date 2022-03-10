@@ -20,26 +20,36 @@
     />
   </head>
   <body>
-    <h1 class="title">Leaderboard</h1>
     <div class="container">
-      <div class="recent-scores">
-        <div class="recent-scores-title">
-          <h2>Recent scores</h2>
-          <button type="button" class="refresh-btn" >Refresh</button>
+      <h1 class="title">Leaderboard</h1>
+      <div class="content">
+        <div class="recent-scores">
+          <div class="recent-scores-title">
+            <h2>Recent scores</h2>
+            <button type="button" class="refresh-btn">Refresh</button>
+          </div>
+          <div class="output">
+            <ul class="list"></ul>
+          </div>
         </div>
-        <div class="output">
-          <ul class="list"></ul>
+        <div class="add-score">
+          <h2>Add your score</h2>
+          <form>
+            <input
+              type="text"
+              class="inputs-style input-name"
+              placeholder="Your name"
+            />
+            <br />
+            <input
+              type="number"
+              class="inputs-style input-score"
+              placeholder="Your score"
+            />
+            <br />
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
         </div>
-      </div>
-      <div class="add-score">
-        <h2>Add your score</h2>
-        <form>
-          <input type="text" class="inputs-style input-name" placeholder="Your name" />
-          <br />
-          <input type="number" class="inputs-style input-score" placeholder="Your score" />
-          <br />
-          <button type="submit" class="submit-btn">Submit</button>
-        </form>
       </div>
     </div>
   </body>

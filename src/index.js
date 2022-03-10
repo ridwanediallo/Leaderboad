@@ -1,22 +1,46 @@
 import './style.css';
-
-import DataList, { list } from './modules/dataList.js';
+import { getresult, setScore } from './modules/fechApi.js';
 
 const inputName = document.querySelector('.input-name');
 const inputScore = document.querySelector('.input-score');
 const submitBtn = document.querySelector('.submit-btn');
+const refreshBtn = document.querySelector('.refresh-btn');
+const list = document.querySelector('.list');
 
-const scoreList = new DataList();
-
-document.addEventListener('DOMContentLoaded', () => {
-  scoreList.getFromLocal(scoreList.scores);
-  scoreList.renderScore(list);
-});
+const renderScore = (list, result) => {
+  list.innerHTML = '';
+  result.sort((a, b) => b.score - a.score);
+  result.forEach((el, i) => {
+    console.log(el);
+    const item = document.createElement('li');
+    if (i % 2 === 0) {
+      item.style.backgroundColor = '#ddd';
+    }
+    item.classList.add('item');
+    item.id = i;
+    item.innerHTML = `${el.user}: ${el.score}`;
+    list.appendChild(item);
+  });
+};
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  scoreList.addScore(inputName.value, inputScore.value, scoreList.scores);
-  scoreList.saveTolocal();
+  setScore(inputName.value, +inputScore.value);
   inputName.value = '';
   inputScore.value = '';
+});
+
+const refresher = () => {
+  const result = getresult();
+  result.then((res) => {
+    renderScore(list, res);
+  });
+};
+
+refreshBtn.addEventListener('click', () => {
+  refresher();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  refresher();
 });

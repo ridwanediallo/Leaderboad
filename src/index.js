@@ -19,3 +19,10 @@ const renderScore = (list, result) => {
     list.appendChild(item);
   });
 };
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  setScore(inputName.value, +inputScore.value);
+  inputName.value = '';
+  inputScore.value = '';
+});

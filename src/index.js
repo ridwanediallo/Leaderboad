@@ -1,10 +1,12 @@
+import './style.css';
+import renderScore from './modules/renderScore.js';
+import { getResult, setScore } from './modules/fechApi.js';
+
 const inputName = document.querySelector('.input-name');
 const inputScore = document.querySelector('.input-score');
 const submitBtn = document.querySelector('.submit-btn');
 const refreshBtn = document.querySelector('.refresh-btn');
 const list = document.querySelector('.list');
-
-import renderScore from './modules/renderScore.js';
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -14,7 +16,7 @@ submitBtn.addEventListener('click', (e) => {
 });
 
 const refresher = () => {
-  const result = getresult();
+  const result = getResult();
   result.then((res) => {
     renderScore(list, res);
   });

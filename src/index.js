@@ -1,22 +1,33 @@
 import './style.css';
+import UseTheApi from './modules/fetchApi.js';
+import renderScore from './modules/renderScore.js';
 
-import DataList, { list } from './modules/dataList.js';
-
+const refreshBtn = document.querySelector('.refresh-btn');
 const inputName = document.querySelector('.input-name');
 const inputScore = document.querySelector('.input-score');
 const submitBtn = document.querySelector('.submit-btn');
+const list = document.querySelector('.list');
 
-const scoreList = new DataList();
+
+
+const unknownGame = new UseTheApi('unknownGame');
+
+refreshBtn.addEventListener('click', () => {
+    const scores = unknownGame.getScore();
+    renderScore(list, scores);
+})
 
 document.addEventListener('DOMContentLoaded', () => {
-  scoreList.getFromLocal(scoreList.scores);
-  scoreList.renderScore(list);
+  const scores = unknownGame.getScore();
+  renderScore(list, scores);
 });
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  scoreList.addScore(inputName.value, inputScore.value, scoreList.scores);
-  scoreList.saveTolocal();
+
+  if (inputName.value && inputScore.value) {
+    unknownGame.addScore({ name: inputName.value, score: inputScore.value });
+  }
   inputName.value = '';
   inputScore.value = '';
 });

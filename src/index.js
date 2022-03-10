@@ -26,3 +26,10 @@ submitBtn.addEventListener('click', (e) => {
   inputName.value = '';
   inputScore.value = '';
 });
+
+const refresher = () => {
+  const result = getresult();
+  result.then((res) => {
+    renderScore(list, res);
+  });
+};

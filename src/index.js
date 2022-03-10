@@ -20,3 +20,5 @@ const setScore = async (user, score) => {
     },
   });
 };
+
+export { getResult, setScore };

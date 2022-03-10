@@ -1,22 +1,9 @@
-import './style.css';
+const id = 'JzH9HTJguuluPrqqtBeU';
 
-import DataList, { list } from './modules/dataList.js';
+const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
 
-const inputName = document.querySelector('.input-name');
-const inputScore = document.querySelector('.input-score');
-const submitBtn = document.querySelector('.submit-btn');
-
-const scoreList = new DataList();
-
-document.addEventListener('DOMContentLoaded', () => {
-  scoreList.getFromLocal(scoreList.scores);
-  scoreList.renderScore(list);
-});
-
-submitBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  scoreList.addScore(inputName.value, inputScore.value, scoreList.scores);
-  scoreList.saveTolocal();
-  inputName.value = '';
-  inputScore.value = '';
-});
+const getresult = async () => {
+  const res = await fetch(url);
+  const data = await res.json();
+  return data.result;
+};

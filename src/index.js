@@ -4,6 +4,8 @@ const submitBtn = document.querySelector('.submit-btn');
 const refreshBtn = document.querySelector('.refresh-btn');
 const list = document.querySelector('.list');
 
+import renderScore from './modules/renderScore.js';
+
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   setScore(inputName.value, +inputScore.value);

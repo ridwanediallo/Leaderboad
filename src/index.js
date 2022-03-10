@@ -37,3 +37,7 @@ const refresher = () => {
 refreshBtn.addEventListener('click', () => {
   refresher();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  refresher();
+});

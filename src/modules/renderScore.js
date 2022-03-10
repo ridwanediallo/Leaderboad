@@ -2,7 +2,6 @@ const renderScore = (list, result) => {
   list.innerHTML = '';
   result.sort((a, b) => b.score - a.score);
   result.forEach((el, i) => {
-    console.log(el);
     const item = document.createElement('li');
     if (i % 2 === 0) {
       item.style.backgroundColor = '#ddd';

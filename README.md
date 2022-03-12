@@ -4,7 +4,6 @@
 
 Leaderboard is an application that displays the scores submitted by all players. It also allows the current user to submit his/her score. All data is preserved thanks to the external Leaderboard API service.
 
-## Consumed Api: [@link](https://us-central1-js-capstone-backend.cloudfunctions.net/api/)
 
 ## Screenshot:
 ![screenshot](./src/Screenshot%20.png);

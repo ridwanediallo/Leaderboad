@@ -58,10 +58,6 @@ button {
   cursor: pointer;
 }
 
-.submit-btn {
-  /* float: right; */
-}
-
 .output {
   height: 300px;
   width: 400px;
